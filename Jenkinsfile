@@ -2,9 +2,7 @@ pipeline {
   agent any
   stages {
     stage('Pull') {
-      steps {
-        git(credentialsId: 'samsul-ssh-project', url: 'git@github.com:samsuldemo/samsul-flask-demo.git', branch: 'main')
-      }
+      checkout scm
     }
 
     stage('build') {
